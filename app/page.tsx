@@ -1,6 +1,10 @@
 import type { SVGProps } from "react";
 
-const DEVELOPER_PORTAL = "https://developer.tech.gov.sg/";
+const APPLYSG_URL =
+  "https://www.developer.tech.gov.sg/products/categories/platform/applysg/overview";
+const AISAY_URL =
+  "https://www.developer.tech.gov.sg/products/categories/productivity-tools/aisay/overview";
+const PROFILE_IMAGE_SRC = "/profile.jpg";
 
 const LINKEDIN = "https://www.linkedin.com/in/nicholas-li-62368bb0/";
 
@@ -46,34 +50,19 @@ export default function Home() {
             solve real-world problems.
           </p>
         </div>
-        <div
-          className="h-28 w-28 shrink-0 rounded-full border border-zinc-200 bg-zinc-100 sm:h-32 sm:w-32"
-          role="img"
-          aria-label="Profile photo placeholder"
+        <img
+          src={PROFILE_IMAGE_SRC}
+          alt="Portrait of Nicholas Li"
+          className="h-28 w-28 shrink-0 rounded-full border border-zinc-200 bg-zinc-100 object-cover sm:h-32 sm:w-32"
         />
       </header>
 
-      <section className="mt-20 space-y-6 sm:mt-24">
-        <h2 className="sr-only">About</h2>
-        <div className="space-y-6 text-base leading-relaxed text-zinc-600 sm:text-lg sm:leading-relaxed">
-          <p>
-            I&apos;m a product manager in the Singapore government, where I build platforms that help
-            agencies deliver services to citizens and businesses more effectively. My work sits at the
-            intersection of policy, technology, and people.
-          </p>
-          <p>
-            Outside of work, I&apos;m exploring what it means for a PM to actually build things — and
-            shipping a few products along the way.
-          </p>
-        </div>
-      </section>
-
-      <section className="mt-20 space-y-14 sm:mt-24">
-        <h2 className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">Products</h2>
+      <section className="mt-14 space-y-10 sm:mt-16 sm:space-y-12">
+        <h2 className="text-xl font-medium tracking-tight text-zinc-900 sm:text-2xl">Products</h2>
 
         <div className="space-y-10">
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
               Government
             </h3>
             <ul className="mt-8 space-y-14">
@@ -81,7 +70,7 @@ export default function Home() {
                 <p className="text-sm font-medium text-zinc-950 sm:text-base">
                   ApplySG ·{" "}
                   <a
-                    href={DEVELOPER_PORTAL}
+                    href={APPLYSG_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-normal text-zinc-700 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
@@ -100,7 +89,7 @@ export default function Home() {
                 <p className="text-sm font-medium text-zinc-950 sm:text-base">
                   AISAY ·{" "}
                   <a
-                    href={DEVELOPER_PORTAL}
+                    href={AISAY_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-normal text-zinc-700 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
@@ -119,7 +108,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-500">
               Side Projects
             </h3>
             <ul className="mt-8 space-y-12">
@@ -148,6 +137,9 @@ export default function Home() {
       </section>
 
       <footer className="mt-24 border-t border-zinc-200/80 pt-10 sm:mt-28">
+        <p className="mb-6 text-sm leading-relaxed text-zinc-600">
+          Happy to connect over a cup of coffee ☕
+        </p>
         <nav aria-label="Social links" className="flex flex-wrap items-center gap-8">
           <a
             href={LINKEDIN}
