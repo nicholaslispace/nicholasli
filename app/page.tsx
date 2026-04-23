@@ -162,16 +162,6 @@ export default function Home() {
             <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
               PM learnings, frameworks, and resources, distilled into something actually useful.
             </p>
-            <div className="mt-5 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
-              <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">First note</p>
-              <p className="mt-2 text-sm font-medium text-zinc-900">
-                Ask: “What did I miss?” Then ask again: “What else did I miss?”
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                A simple product leadership habit for surfacing blind spots, inviting perspective, and
-                avoiding the trap of mistaking certainty for empathy.
-              </p>
-            </div>
           </article>
         </div>
       </section>
