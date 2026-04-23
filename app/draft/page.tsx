@@ -65,18 +65,11 @@ export default function DraftHomePage() {
               Product manager building digital products that solve real-world problems.
             </p>
             <p className="max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg sm:leading-relaxed">
-              By day, I work on government products used at scale. By night, I build practical tools
-              and distill product lessons into usable frameworks.
+              By day, I work on government products used at scale. By night, I build, learn and
+              reflect.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 pt-1">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 rounded-full bg-zinc-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-zinc-800"
-            >
-              Current homepage
-              <ArrowUpRightIcon className="h-4 w-4" />
-            </Link>
             <a
               href={LINKEDIN}
               target="_blank"
@@ -95,18 +88,10 @@ export default function DraftHomePage() {
         />
       </header>
 
-      <section className="mt-12 grid gap-3 sm:grid-cols-3">
-        <div className="rounded-2xl border border-zinc-200 bg-white p-4">
+      <section className="mt-12">
+        <div className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
           <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">Focus</p>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-700">Government digital products, AI workflows, and useful side projects.</p>
-        </div>
-        <div className="rounded-2xl border border-zinc-200 bg-white p-4">
-          <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">Approach</p>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-700">Clarity, usability, and systems thinking over noise, novelty, or fluff.</p>
-        </div>
-        <div className="rounded-2xl border border-zinc-200 bg-white p-4">
-          <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">Currently building</p>
-          <p className="mt-2 text-sm leading-relaxed text-zinc-700">Dabble, Product Dojo, and a body of practical PM notes.</p>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-700 sm:text-base">Improve lives. Think AI-first.</p>
         </div>
       </section>
 
@@ -162,9 +147,7 @@ export default function DraftHomePage() {
               unstructured documents and feeds it into existing government systems.
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
-              <MetricPill>Up to 50 documents simultaneously</MetricPill>
-              <MetricPill>Multilingual text support</MetricPill>
-              <MetricPill>Suspicious element flagging</MetricPill>
+              <MetricPill>Annual time savings of &gt;30 hours per officer</MetricPill>
             </div>
           </article>
         </div>
@@ -212,6 +195,43 @@ export default function DraftHomePage() {
             </div>
           </article>
         </div>
+      </section>
+
+      <section className="mt-16 space-y-8 sm:mt-20">
+        <div className="space-y-2">
+          <SectionLabel>Speaking</SectionLabel>
+          <h2 className="text-2xl font-medium tracking-tight text-zinc-950 sm:text-3xl">Conference talks and lessons from the trenches</h2>
+          <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+            I also share lessons from building and transforming teams in the real world, especially
+            where agility, product thinking, and delivery meet.
+          </p>
+        </div>
+
+        <article className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm shadow-zinc-950/5">
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-lg font-medium tracking-tight text-zinc-950">
+              Battle for Agility: LeSSons from the Trenches
+            </h3>
+            <a
+              href="https://less.works/conferenza/sessions/2024-less-conference-singapore-battle-for-agility-lessons-from-the-trenches-397"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
+            >
+              LeSS Conference Singapore 2024
+              <ArrowUpRightIcon className="h-3.5 w-3.5" />
+            </a>
+          </div>
+          <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+            A 45-minute conference session on how the Business Grants Portal team adopted the LeSS
+            framework to address siloed teams, multiple backlogs, and a lack of product-centric
+            thinking, creating a structure for the team to learn better and faster.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <MetricPill>45-minute session</MetricPill>
+            <MetricPill>LeSS Conference Singapore 2024</MetricPill>
+          </div>
+        </article>
       </section>
 
       <footer className="mt-24 border-t border-zinc-200/80 pt-10 sm:mt-28">
