@@ -69,17 +69,6 @@ export default function DraftHomePage() {
               reflect.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 pt-1">
-            <a
-              href={LINKEDIN}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 transition hover:border-zinc-400 hover:text-zinc-950"
-            >
-              LinkedIn
-              <LinkedInIcon className="h-4 w-4" />
-            </a>
-          </div>
         </div>
         <img
           src={PROFILE_IMAGE_SRC}

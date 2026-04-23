@@ -5,12 +5,16 @@ const APPLYSG_URL =
 const AISAY_URL =
   "https://www.developer.tech.gov.sg/products/categories/productivity-tools/aisay/overview";
 const PROFILE_IMAGE_SRC = "/profile.jpg";
-
 const LINKEDIN = "https://www.linkedin.com/in/nicholas-li-62368bb0/";
 
-/** Replace when ready */
-const PLACEHOLDER_GITHUB = "#";
-const PLACEHOLDER_EMAIL = "mailto:you@example.com";
+function ArrowUpRightIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden {...props}>
+      <path d="M7 17 17 7" />
+      <path d="M8 7h9v9" />
+    </svg>
+  );
+}
 
 function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -20,35 +24,35 @@ function LinkedInIcon(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-function GitHubIcon(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
-      <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-    </svg>
-  );
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">{children}</p>;
 }
 
-function EmailIcon(props: SVGProps<SVGSVGElement>) {
+function MetricPill({ children }: { children: React.ReactNode }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden {...props}>
-      <rect x="2" y="4" width="20" height="16" rx="2" />
-      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-    </svg>
+    <span className="inline-flex items-center rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-zinc-700">
+      {children}
+    </span>
   );
 }
 
 export default function Home() {
   return (
-    <main className="mx-auto w-full max-w-2xl px-6 pb-24 pt-16 sm:px-8 sm:pt-20 md:pt-24">
+    <main className="mx-auto w-full max-w-3xl px-6 pb-24 pt-14 sm:px-8 sm:pt-18 md:pt-24">
       <header className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between md:gap-12">
         <div className="min-w-0 flex-1 space-y-6">
-          <h1 className="text-4xl font-medium tracking-tight text-zinc-950 sm:text-5xl">
-            Nicholas Li
-          </h1>
-          <p className="max-w-xl text-lg leading-relaxed text-zinc-600 sm:text-xl sm:leading-relaxed">
-            PM by day, builder by night. I work on government digital products and side projects to
-            solve real-world problems.
-          </p>
+          <div className="space-y-4">
+            <h1 className="text-4xl font-medium tracking-tight text-zinc-950 sm:text-5xl">
+              Nicholas Li
+            </h1>
+            <p className="max-w-2xl text-2xl font-medium leading-tight tracking-tight text-zinc-900 sm:text-3xl sm:leading-tight">
+              Product manager building digital products that solve real-world problems.
+            </p>
+            <p className="max-w-2xl text-base leading-relaxed text-zinc-600 sm:text-lg sm:leading-relaxed">
+              By day, I work on government products used at scale. By night, I build, learn and
+              reflect.
+            </p>
+          </div>
         </div>
         <img
           src={PROFILE_IMAGE_SRC}
@@ -57,83 +61,150 @@ export default function Home() {
         />
       </header>
 
-      <section className="mt-14 space-y-10 sm:mt-16 sm:space-y-12">
-        <h2 className="text-xl font-medium tracking-tight text-zinc-900 sm:text-2xl">Products</h2>
-
-        <div className="space-y-10">
-          <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-500">
-              Government
-            </h3>
-            <ul className="mt-8 space-y-14">
-              <li className="border-l border-zinc-300 pl-6">
-                <p className="text-sm font-medium text-zinc-950 sm:text-base">
-                  ApplySG ·{" "}
-                  <a
-                    href={APPLYSG_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-normal text-zinc-700 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
-                  >
-                    View on Developer Portal →
-                  </a>
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
-                  A no-code form and workflow builder that lets government agencies digitalise complex
-                  schemes — from application forms to multi-step approval processes. Powers the Business
-                  Grants Portal 2.0 and Research Grants Portal. Cut onboarding time for complex grant
-                  schemes from 2 months to 2 weeks.
-                </p>
-              </li>
-              <li className="border-l border-zinc-300 pl-6">
-                <p className="text-sm font-medium text-zinc-950 sm:text-base">
-                  AISAY ·{" "}
-                  <a
-                    href={AISAY_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-normal text-zinc-700 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
-                  >
-                    View on Developer Portal →
-                  </a>
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
-                  An AI-powered document reader that extracts and structures information from unstructured
-                  documents — invoices, bank statements, identity cards, handwritten notes — and feeds it
-                  into existing government systems. Handles multilingual text, processes up to 50
-                  documents simultaneously, and flags potentially suspicious document elements.
-                </p>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.16em] text-stone-500">
-              Side Projects
-            </h3>
-            <ul className="mt-8 space-y-12">
-              <li className="border-l border-amber-200/90 pl-6">
-                <p className="text-sm font-medium text-stone-900 sm:text-base">
-                  Dabble ·{" "}
-                  <span className="font-normal text-stone-500">[coming soon]</span>
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:text-base sm:leading-relaxed">
-                  Tap a button, get one age-appropriate screen-free activity for your kid right now. No
-                  scroll, no overwhelm — just one thing to do.
-                </p>
-              </li>
-              <li className="border-l border-amber-200/90 pl-6">
-                <p className="text-sm font-medium text-stone-900 sm:text-base">
-                  Product Dojo ·{" "}
-                  <span className="font-normal text-stone-500">[coming soon]</span>
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-stone-600 sm:text-base sm:leading-relaxed">
-                  PM learnings, frameworks, and resources — distilled into something actually useful.
-                </p>
-              </li>
-            </ul>
-          </div>
+      <section className="mt-12">
+        <div className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5">
+          <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">Focus</p>
+          <p className="mt-2 text-sm leading-relaxed text-zinc-700 sm:text-base">Improve lives. Think AI-first.</p>
         </div>
+      </section>
+
+      <section className="mt-16 space-y-8 sm:mt-20">
+        <div className="space-y-2">
+          <SectionLabel>Selected work</SectionLabel>
+          <h2 className="text-2xl font-medium tracking-tight text-zinc-950 sm:text-3xl">Products with visible outcomes</h2>
+          <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+            A few products I have worked on, with an emphasis on practical value and measurable impact.
+          </p>
+        </div>
+
+        <div className="space-y-6">
+          <article className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm shadow-zinc-950/5">
+            <div className="flex flex-wrap items-center gap-3">
+              <h3 className="text-lg font-medium tracking-tight text-zinc-950">ApplySG</h3>
+              <a
+                href={APPLYSG_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
+              >
+                View on Developer Portal
+                <ArrowUpRightIcon className="h-3.5 w-3.5" />
+              </a>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+              A no-code form and workflow builder that helps government agencies digitalise complex
+              schemes, from application forms to multi-step approval processes.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <MetricPill>2 months → 2 weeks onboarding</MetricPill>
+              <MetricPill>Business Grants Portal 2.0</MetricPill>
+              <MetricPill>Research Grants Portal</MetricPill>
+            </div>
+          </article>
+
+          <article className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm shadow-zinc-950/5">
+            <div className="flex flex-wrap items-center gap-3">
+              <h3 className="text-lg font-medium tracking-tight text-zinc-950">AISAY</h3>
+              <a
+                href={AISAY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
+              >
+                View on Developer Portal
+                <ArrowUpRightIcon className="h-3.5 w-3.5" />
+              </a>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+              An AI-powered document reader that extracts and structures information from messy,
+              unstructured documents and feeds it into existing government systems.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              <MetricPill>Annual time savings of &gt;30 hours per officer</MetricPill>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="mt-16 space-y-8 sm:mt-20">
+        <div className="space-y-2">
+          <SectionLabel>Side projects</SectionLabel>
+          <h2 className="text-2xl font-medium tracking-tight text-zinc-950 sm:text-3xl">Building things outside the day job</h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <article className="rounded-3xl border border-amber-200/90 bg-amber-50/40 p-6">
+            <div className="flex items-center gap-3">
+              <h3 className="text-lg font-medium tracking-tight text-stone-900">Dabble</h3>
+              <span className="rounded-full bg-white px-2.5 py-1 text-xs font-medium text-stone-600 ring-1 ring-amber-200">
+                In progress
+              </span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-stone-700 sm:text-base sm:leading-relaxed">
+              Tap a button, get one age-appropriate screen-free activity for your kid right now. No
+              scroll, no overwhelm, just one useful thing to do.
+            </p>
+          </article>
+
+          <article className="rounded-3xl border border-zinc-200 bg-white p-6">
+            <div className="flex items-center gap-3">
+              <h3 className="text-lg font-medium tracking-tight text-zinc-950">Product Dojo</h3>
+              <span className="rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-600">
+                Seeded
+              </span>
+            </div>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+              PM learnings, frameworks, and resources, distilled into something actually useful.
+            </p>
+            <div className="mt-5 rounded-2xl border border-zinc-200 bg-zinc-50 p-4">
+              <p className="text-xs uppercase tracking-[0.16em] text-zinc-500">First note</p>
+              <p className="mt-2 text-sm font-medium text-zinc-900">
+                Ask: “What did I miss?” Then ask again: “What else did I miss?”
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                A simple product leadership habit for surfacing blind spots, inviting perspective, and
+                avoiding the trap of mistaking certainty for empathy.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="mt-16 space-y-8 sm:mt-20">
+        <div className="space-y-2">
+          <SectionLabel>Speaking</SectionLabel>
+          <h2 className="text-2xl font-medium tracking-tight text-zinc-950 sm:text-3xl">Conference talks and lessons from the trenches</h2>
+          <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+            I also share lessons from building and transforming teams in the real world, especially
+            where agility, product thinking, and delivery meet.
+          </p>
+        </div>
+
+        <article className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm shadow-zinc-950/5">
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-lg font-medium tracking-tight text-zinc-950">
+              Battle for Agility: LeSSons from the Trenches
+            </h3>
+            <a
+              href="https://less.works/conferenza/sessions/2024-less-conference-singapore-battle-for-agility-lessons-from-the-trenches-397"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
+            >
+              LeSS Conference Singapore 2024
+              <ArrowUpRightIcon className="h-3.5 w-3.5" />
+            </a>
+          </div>
+          <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
+            A 45-minute conference session on how the Business Grants Portal team adopted the LeSS
+            framework to address siloed teams, multiple backlogs, and a lack of product-centric
+            thinking, creating a structure for the team to learn better and faster.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <MetricPill>45-minute session</MetricPill>
+            <MetricPill>LeSS Conference Singapore 2024</MetricPill>
+          </div>
+        </article>
       </section>
 
       <footer className="mt-24 border-t border-zinc-200/80 pt-10 sm:mt-28">
@@ -150,22 +221,6 @@ export default function Home() {
           >
             <LinkedInIcon className="h-5 w-5" />
             <span>LinkedIn</span>
-          </a>
-          <a
-            href={PLACEHOLDER_GITHUB}
-            className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900"
-            aria-label="GitHub (placeholder link)"
-          >
-            <GitHubIcon className="h-5 w-5" />
-            <span>GitHub</span>
-          </a>
-          <a
-            href={PLACEHOLDER_EMAIL}
-            className="flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900"
-            aria-label="Email (placeholder)"
-          >
-            <EmailIcon className="h-5 w-5" />
-            <span>Email</span>
           </a>
         </nav>
       </footer>
