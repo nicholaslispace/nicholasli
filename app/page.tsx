@@ -147,11 +147,17 @@ export default function Home() {
           </article>
 
           <article className="rounded-3xl border border-zinc-200 bg-white p-6">
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3">
               <h3 className="text-lg font-medium tracking-tight text-zinc-950">Product Dojo</h3>
-              <span className="rounded-full bg-zinc-100 px-2.5 py-1 text-xs font-medium text-zinc-600">
-                Seeded
-              </span>
+              <a
+                href="https://product-dojo-3a8y.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-zinc-600 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900 hover:decoration-zinc-400"
+              >
+                Visit site
+                <ArrowUpRightIcon className="h-3.5 w-3.5" />
+              </a>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-zinc-600 sm:text-base sm:leading-relaxed">
               PM learnings, frameworks, and resources, distilled into something actually useful.
