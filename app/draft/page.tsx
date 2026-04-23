@@ -221,7 +221,7 @@ export default function DraftHomePage() {
 
       <footer className="mt-24 border-t border-zinc-200/80 pt-10 sm:mt-28">
         <p className="mb-6 text-sm leading-relaxed text-zinc-600">
-          Happy to connect over a cup of coffee ☕
+          Happy to connect over a cup of coffee ☕☕☕
         </p>
         <nav aria-label="Social links" className="flex flex-wrap items-center gap-8">
           <a
